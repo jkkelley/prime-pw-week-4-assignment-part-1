@@ -101,11 +101,21 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+
+let numbersInArray = [5, 5, 5, 5];
+let arrayCountFive = [3, 5, 7, 9, 11]
+
+function sumAll( array ) {
+  let sum = 0;
   // TODO: loop to add items
+  for (let x = 0; x < array.length; x++){
+    sum += array[x];
+  }
   return sum;
 }
+
+console.log(`The sum of 5 + 5 + 5 + 5 is ${sumAll(numbersInArray)}.`);
+console.log(`The sum of 3 + 5 + 7 + 9 + 11 is ${sumAll(arrayCountFive)}.`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
