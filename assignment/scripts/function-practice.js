@@ -51,9 +51,9 @@ function isPositive( number ) {
 
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
-console.log( 'isPositive - should say true', isPositive(3) );
-console.log( 'isPositive - should say false', isPositive(0) );
-console.log( 'isPositive - should say false', isPositive(-3) );
+console.log( 'isPositive - should say true', isPositive(3));
+console.log( 'isPositive - should say false', isPositive(0));
+console.log( 'isPositive - should say false', isPositive(-3));
 
 
 // 6. Function to return the _last_ item in an array. If the
@@ -64,8 +64,11 @@ function getLast( array ) {
   return array[array.length - 1]; // grabs the length of array and returns last item
 }
 
+// Here are a couple of test to show that the function works.
+console.log('Last item of this array should return duck:', getLast(['moose', 'hen', 'duck']));
+
 console.log('Last item of trainStation:', getLast(trainStation));
-console.log('homesForSale should return undefined:', getLast(homesForSale));
+console.log('"homesForSale" should return undefined:', getLast(homesForSale));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -82,6 +85,7 @@ function find( value, array) {
   return false;
 }
 
+console.log(bandNames); // console log the names so it easy to see true or false.
 console.log('Is Tool in bandNames:', find('Tool', bandNames));
 console.log('Is Mudvayne in bandNames:', find('Mudvayne', bandNames));
 
@@ -113,8 +117,8 @@ function isFirstLetter(letter, string) {
 //   return false;
 // }
 
-console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple'));
+console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
 
@@ -130,9 +134,9 @@ function sumAll( array ) {
   return sum;
 }
 
-console.log(`The sum of 5 + 5 + 5 + 5 is ${sumAll(numbersInArray)}.`);
-console.log(`The sum of 3 + 5 + 7 + 9 + 11 is ${sumAll(arrayCountFive)}.`);
-console.log(`The sum of 2 + 2 + 2 is ${sumAll([2, 2, 2])}.`);
+console.log('The sum of 5 + 5 + 5 + 5 is:', sumAll(numbersInArray));
+console.log('The sum of 3 + 5 + 7 + 9 + 11 is:', sumAll(arrayCountFive));
+console.log('The sum of 2 + 2 + 2 is:', sumAll([2, 2, 2]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -152,10 +156,42 @@ function areWePositive(yourNumberArray) {
   return positiveArray;
 }
 
-console.log(`Return all positive numbers: ${areWePositive([-1, -4, 5, 9, 11])}`);
-console.log(`Return an empty array with our function: ${areWePositive([])}`);
-console.log(`Return positive numbers with the array we created: ${areWePositive(positiveNums)}`);
+console.log('Return all positive numbers:', areWePositive([-1, -4, 5, 9, 11]));
+console.log('Return an empty array with our function:', areWePositive([]));
+console.log('Return positive numbers with the positiveNums array we created:', areWePositive(positiveNums));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+
+// Question from codewars
+
+// Nathan loves cycling.
+// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+
+// Examples that were given
+
+// time = 3 ----> litres = 1
+// time = 6.7---> litres = 3
+// time = 11.8--> litres = 5
+
+function litres(time) {
+  const litresPerHour = .5; // Created our constant variable since he drinks half a litre an hour.
+  let sumTime = litresPerHour * time; // Here we multiply our intake per hour and time.
+  // To return the smallest rounded value, we use a built in method from Math,
+  // it gives the value rounded down.
+  // If they asked for the number to be rounded up, we could have used Math.ceil()
+  return Math.floor(sumTime);
+}
+
+// Let's show our work in action
+
+console.log('2 should return 1:', litres(2));
+console.log('2 should return 0:', litres(1.4));
+console.log('2 should return 6:', litres(12.3));
+console.log('2 should return 0:', litres(0.82));
+console.log('2 should return 5:', litres(11.8));
+console.log('2 should return 893:', litres(1787));
+console.log('2 should return 0:', litres(0));
