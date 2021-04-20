@@ -90,12 +90,23 @@ console.log('Is Mudvayne in bandNames:', find('Mudvayne', bandNames));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
+
 function isFirstLetter(letter, string) {
   if (letter === string.charAt(0)) {
+    // this method checks to see if the value letter is at the first index of the string
     return true;
   }
   return false;
 }
+
+
+// function isFirstLetter(letter, string) {
+//   let stringSplit = string.split('');
+//   if (letter === stringSplit[0]){
+//     return true;
+//   }
+//   return false;
+// }
 
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
@@ -109,13 +120,14 @@ function sumAll( array ) {
   let sum = 0;
   // TODO: loop to add items
   for (let x = 0; x < array.length; x++){
-    sum += array[x];
+    sum += array[x]; // adding each value to the sum as it iterates through the array
   }
   return sum;
 }
 
 console.log(`The sum of 5 + 5 + 5 + 5 is ${sumAll(numbersInArray)}.`);
 console.log(`The sum of 3 + 5 + 7 + 9 + 11 is ${sumAll(arrayCountFive)}.`);
+console.log(`The sum of 2 + 2 + 2 is ${sumAll([2, 2, 2])}.`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
