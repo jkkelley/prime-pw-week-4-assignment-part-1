@@ -91,17 +91,22 @@ console.log('Is Mudvayne in bandNames:', find('Mudvayne', bandNames));
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 
+
 function isFirstLetter(letter, string) {
   if (letter === string.charAt(0)) {
-    // this method checks to see if the value letter is at the first index of the string
+    // this method checks to see if the value letter is at the first index of the string.
     return true;
   }
   return false;
 }
 
+// Below is another way this could be done. I'm sure there are several ways to do this.
+// These were the two I came up with.
 
 // function isFirstLetter(letter, string) {
+      // Below we split the letters of the string into an array.
 //   let stringSplit = string.split('');
+      // The expression below checks the letter and first index of the array we created.
 //   if (letter === stringSplit[0]){
 //     return true;
 //   }
@@ -120,7 +125,7 @@ function sumAll( array ) {
   let sum = 0;
   // TODO: loop to add items
   for (let x = 0; x < array.length; x++){
-    sum += array[x]; // adding each value to the sum as it iterates through the array
+    sum += array[x]; // Adding each value to the sum as it iterates through the array
   }
   return sum;
 }
@@ -133,7 +138,23 @@ console.log(`The sum of 2 + 2 + 2 is ${sumAll([2, 2, 2])}.`);
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+let positiveNums = [0, 4, -22, 6, 9];
 
+function areWePositive(yourNumberArray) {
+  let positiveArray = []; // We need to create an empty array to store our values in.
+  for (let x = 0; x < yourNumberArray.length; x++) {
+    // Below we state that if a number is positive, we'll push it to our
+    // new array we created without changing the original one.
+    if (yourNumberArray[x] > 0) {
+      positiveArray.push(yourNumberArray[x]);
+    }
+  }
+  return positiveArray;
+}
+
+console.log(`Return all positive numbers: ${areWePositive([-1, -4, 5, 9, 11])}`);
+console.log(`Return an empty array with our function: ${areWePositive([])}`);
+console.log(`Return positive numbers with the array we created: ${areWePositive(positiveNums)}`);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
