@@ -14,10 +14,10 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, for example 'Hello, Jo!'
 function helloName( name ) {
-  return 'James';
+  return name;
 }
 // Remember to call the function to test
-console.log(`Hello, ${helloName()}`);
+console.log(`Hello, ${helloName('James')}`);
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
@@ -58,9 +58,14 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
+let trainStation = ['MSP', 'NY', 'LA'];
+let homesForSale = [];
 function getLast( array ) {
-
+  return array[array.length - 1];
 }
+
+console.log('Last item of trainStation:', getLast(trainStation));
+console.log('homesForSale should return undefined:',getLast(homesForSale));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
