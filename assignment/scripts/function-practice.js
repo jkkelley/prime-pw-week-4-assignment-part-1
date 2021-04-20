@@ -61,18 +61,29 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 let trainStation = ['MSP', 'NY', 'LA'];
 let homesForSale = [];
 function getLast( array ) {
-  return array[array.length - 1];
+  return array[array.length - 1]; // grabs the length of array and returns last item
 }
 
 console.log('Last item of trainStation:', getLast(trainStation));
-console.log('homesForSale should return undefined:',getLast(homesForSale));
+console.log('homesForSale should return undefined:', getLast(homesForSale));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-function find( value, array ){
 
+let bandNames = ['In Flames', 'Tool', 'Slipknot', 'Pink Floyd']
+
+function find( value, array) {
+  for(let x = 0; x < array.length; x++) {
+    if(array[x] === value) {
+      return true;
+    }
+  }
+  return false;
 }
+
+console.log('Is Tool in bandNames:', find('Tool', bandNames));
+console.log('Is Mudvayne in bandNames:', find('Mudvayne', bandNames));
 
 // ----------------------
 // Stretch Goals
