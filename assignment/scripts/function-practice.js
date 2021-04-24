@@ -14,10 +14,10 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, for example 'Hello, Jo!'
 function helloName( name ) {
-  return name;
+  return `Hello ${name}`;
 }
 // Remember to call the function to test
-console.log(`Hello, ${helloName('James')}`);
+console.log('Test - should say "Hello James"', helloName('James'));
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
@@ -30,6 +30,8 @@ console.log('Running addNumbers with numbers 5 + 5 should return 10:',
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree( num1, num2, num3) {
+  // Here we create a local variable answer and ask it to multiply three
+  // sets of numbers for us.
   let answer = (num1 * num2) * num3;
   return answer;
 }
@@ -40,6 +42,8 @@ console.log('Running multiplyThree with numbers 3 * 3 * 3 should return 27:',
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
+  // Any number that is put into our function will return true for us,
+  // if not positive it will return false when we call isPositive.
   if ( number > 0 ) {
     return true;
   } else {
@@ -88,6 +92,7 @@ function find( value, array) {
 console.log(bandNames); // console log the names so it easy to see true or false.
 console.log('Is Tool in bandNames:', find('Tool', bandNames));
 console.log('Is Mudvayne in bandNames:', find('Mudvayne', bandNames));
+console.log('Is Jay-Z in bandNames:', find('Jay-z', bandNames));
 
 // ----------------------
 // Stretch Goals
@@ -97,8 +102,8 @@ console.log('Is Mudvayne in bandNames:', find('Mudvayne', bandNames));
 
 
 function isFirstLetter(letter, string) {
+  // This expression checks to see if the value letter is at the first index of the string.
   if (letter === string.charAt(0)) {
-    // this method checks to see if the value letter is at the first index of the string.
     return true;
   }
   return false;
@@ -117,8 +122,8 @@ function isFirstLetter(letter, string) {
 //   return false;
 // }
 
-console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple'));
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple'));
+console.log( 'isFirstLetter - should return true for the letter "a"', isFirstLetter('a', 'apple'));
+console.log( 'isFirstLetter - should return false for the letter "z"', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
 
@@ -126,8 +131,11 @@ let numbersInArray = [5, 5, 5, 5];
 let arrayCountFive = [3, 5, 7, 9, 11]
 
 function sumAll( array ) {
+  // Below we set our local variable to add to.
   let sum = 0;
   // TODO: loop to add items
+  // The expression below will allow us to look at the whole array and iterate through
+  // each value.
   for (let x = 0; x < array.length; x++){
     sum += array[x]; // Adding each value to the sum as it iterates through the array
   }
@@ -136,16 +144,20 @@ function sumAll( array ) {
 
 console.log('The sum of 5 + 5 + 5 + 5 is:', sumAll(numbersInArray));
 console.log('The sum of 3 + 5 + 7 + 9 + 11 is:', sumAll(arrayCountFive));
+
+// Below console log shows that you can call the function and input your desired numbers in.
 console.log('The sum of 2 + 2 + 2 is:', sumAll([2, 2, 2]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
-let positiveNums = [0, 4, -22, 6, 9];
+
 
 function areWePositive(yourNumberArray) {
-  let positiveArray = []; // We need to create an empty array to store our values in.
+  // We need to create an empty array to store our values in as we don't want want
+  // to change the input array.
+  let positiveArray = [];
   for (let x = 0; x < yourNumberArray.length; x++) {
     // Below we state that if a number is positive, we'll push it to our
     // new array we created without changing the original one.
@@ -157,7 +169,10 @@ function areWePositive(yourNumberArray) {
 }
 
 console.log('Return all positive numbers:', areWePositive([-1, -4, 5, 9, 11]));
+console.log('Returns an empty array, since all numbers are negative:', areWePositive([-1, -33, -44, -55]));
 console.log('Return an empty array with our function:', areWePositive([]));
+
+let positiveNums = [0, 4, -22, 6, 9];
 console.log('Return positive numbers with the positiveNums array we created:', areWePositive(positiveNums));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
@@ -165,13 +180,16 @@ console.log('Return positive numbers with the positiveNums array we created:', a
 //     here in a comment, write the function, and test it!
 
 
-// Question from codewars
+// Question from codewars.
 
 // Nathan loves cycling.
-// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
-// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
 
-// Examples that were given
+// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of
+// water per hour of cycling. You get given the time in hours and you need to return
+// the number of litres Nathan will drink, rounded to the smallest value.
+//
+
+// Examples that were given.
 
 // time = 3 ----> litres = 1
 // time = 6.7---> litres = 3
